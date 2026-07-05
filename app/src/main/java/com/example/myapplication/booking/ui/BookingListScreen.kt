@@ -1,6 +1,7 @@
 package com.example.myapplication.booking.ui
 
 import android.app.Application
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,7 +19,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -50,6 +50,10 @@ fun BookingListRoute(
         viewModel.toastEvents.collect { message ->
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    LaunchedEffect(booking) {
+        booking?.let { Log.d(TAG, "Booking data: $it") }
     }
 
     BookingListScreen(
@@ -99,6 +103,8 @@ fun BookingListScreen(
         }
     }
 }
+
+private const val TAG = "BookingListScreen"
 
 @Composable
 private fun Header(
