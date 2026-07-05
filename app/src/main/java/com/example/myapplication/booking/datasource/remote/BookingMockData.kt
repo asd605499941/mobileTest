@@ -1,0 +1,5 @@
+package com.example.myapplication.booking.datasource.remote
+
+fun getBookingJson(): String {
+    return "{\"shipReference\":\"ABCDEF\",\"shipToken\":\"AAAABBBCCCCDDD\",\"canIssueTicketChecking\":false,\"expiryTime\":\"1722409261\",\"duration\":2430,\"segments\":[{\"id\":1,\"originAndDestinationPair\":{\"destination\":{\"code\":\"BBB\",\"displayName\":\"BBB DisplayName\",\"url\":\"www.ship.com\"},\"destinationCity\":\"BBB City\",\"origin\":{\"code\":\"AAA\",\"displayName\":\"AAA DisplayName\",\"url\":\"www.ship.com\"},\"originCity\":\"AAA City\"}},{\"id\":2,\"originAndDestinationPair\":{\"destination\":{\"code\":\"CCC\",\"displayName\":\"CCC DisplayName\",\"url\":\"www.ship.com\"},\"destinationCity\":\"CCC\",\"origin\":{\"code\":\"BBB\",\"displayName\":\"BBB DisplayName\",\"url\":\"www.ship.com\"},\"originCity\":\"BBB City\"}}]}"
+}
